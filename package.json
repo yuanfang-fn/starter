@@ -6,6 +6,7 @@
     "antd-mobile": "^2.2.9",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
+    "react-router-config": "^4.4.0-beta.6",
     "react-scripts": "2.1.8"
   },
   "scripts": {
@@ -25,6 +26,7 @@
   "devDependencies": {
     "babel-plugin-import": "^1.11.0",
     "customize-cra": "^0.2.12",
+    "dva": "^2.4.1",
     "eslint": "^5.15.1",
     "eslint-config-airbnb": "^17.1.0",
     "eslint-import-resolver-alias": "^1.1.2",
@@ -32,6 +34,7 @@
     "eslint-plugin-import": "^2.16.0",
     "eslint-plugin-jsx-a11y": "^6.2.1",
     "eslint-plugin-react": "^7.12.4",
-    "react-app-rewired": "^2.1.0"
+    "react-app-rewired": "^2.1.0",
+    "webpack-api-mocker": "^1.6.6"
   }
 }

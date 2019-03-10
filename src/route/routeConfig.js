@@ -1,8 +1,10 @@
-import App from 'components/layout';
+import App from '../components/layout';
 
 const routes = [
   {
     path: '/',
+    pathname: '/',
+    name:"index",
     exact: true,
     component: App,
   },
