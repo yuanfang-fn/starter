@@ -1,6 +1,8 @@
 import dva from 'dva';
 import createHistory from 'history/createHashHistory';
 import AppRouter from './route'
+import createLoading from 'dva-loading';
+
 import * as serviceWorker from './serviceWorker';
 
 
@@ -10,7 +12,10 @@ const app = dva({
     history: createHistory(),
   });
 
+  app.use(createLoading())
+
   app.model(require('./model/sysModel.js').default);
+
 
   // 4. Router
   app.router(AppRouter);

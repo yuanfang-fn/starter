@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd-mobile": "^2.2.9",
+    "dva-loading": "^2.0.6",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-router-config": "^4.4.0-beta.6",

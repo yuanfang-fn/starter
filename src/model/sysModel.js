@@ -1,33 +1,31 @@
 import * as service from '../service/api'
+import { routerRedux } from 'dva/router';
 
 export default {
 
     namespace: 'global',
 
     state: {
-        list: []
+        userInfo: []
     },
 
     subscriptions: {
         setup({dispatch}) {
-            dispatch({type: 'fetch'})
         },
     },
 
     effects: {
-      
-
         * fetch({payload}, {call, put}) {  // eslint-disable-line
-            const loginData = yield call(service.login);
-            let data= {data:{list:[1,2]}}
-          yield put({type: 'save', payload: data});
+            const loginData = yield call(service.login,payload);
+            console.log(loginData);
+            if (loginData.status === 'ok') {
+              yield put(routerRedux.push('/'))
+            }
         },
-      
     },
 
     reducers: {
         save(state, {payload: {data}}) {
-            
             state.list = data.list;
             return {...state}
         },

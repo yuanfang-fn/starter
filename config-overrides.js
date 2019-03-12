@@ -6,20 +6,22 @@ const {
   // addLessLoader,
 } = require('customize-cra');
 const alias = require('./alias');
+const path = require('path');
 const apiMocker = require('webpack-api-mocker')
+module.exports = {
+  devServer: function(configFunction) {
+    return function(proxy, allowedHost) {
+      const config = configFunction(proxy, allowedHost);
 
-module.exports = override(
-  fixBabelImports('import', {
-    libraryName: 'antd-mobile', libraryDirectory: 'es', style: 'css', // change importing css to less
-  }),
-  addWebpackAlias(alias),
-  overrideDevServer({
-    before(app) {
-      apiMocker(app, path.resolve('mock/api.js'))
+      let before = function (app) { 
+        apiMocker(app, path.resolve(__dirname,'./mock/api.js'), {
+          changeHost: true,
+        })
+     }
+     return {
+       ...config,
+       before
+     }
     }
-  })
-  // addLessLoader({
-  //   javascriptEnabled: true,
-  //   modifyVars: { "@primary-color": "#1DA57A" }
-  // })
-);
+  },
+}
