@@ -1,11 +1,11 @@
 import React from 'react';
 import {
-  Router, Switch  
+  Router, Switch, ConnectedRouter
 } from 'dva/router';
 import routeConfig from './routeConfig'
 import { renderRoutes } from 'react-router-config'
+
 function RouterConfig({ history }) {
-  console.log(routeConfig);
     return (
       <Router history={history}>
         <Switch>
@@ -13,7 +13,7 @@ function RouterConfig({ history }) {
         </Switch>
       </Router>
     );
-  }
+}
 
 
 export default RouterConfig
