@@ -6,8 +6,6 @@ import createLoading from 'dva-loading';
 import * as serviceWorker from './serviceWorker';
 
 
-
-
 const app = dva({
     history: createHistory(),
   });

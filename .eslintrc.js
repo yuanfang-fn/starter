@@ -1,8 +1,8 @@
 module.exports = {
     "env": {
         "browser": true,
-        "require":true,
-        "es6": true
+        "es6": true,
+        "node": true,
     },
     "extends": "eslint:recommended",
     "globals": {
@@ -16,11 +16,11 @@ module.exports = {
         "ecmaVersion": 2018,
         "sourceType": "module"
     },
-    "plugins": [
+  "parser": "babel-eslint",
+  "plugins": [
         "react"
     ],
     "rules": {
-      'react/jsx-filename-extension': [1, { extensions: ['.js'] }],
-      "react/prefer-stateless-function":0,
+      "react/jsx-uses-vars": ["error"]
     }
 };

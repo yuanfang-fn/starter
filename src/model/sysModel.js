@@ -10,14 +10,12 @@ export default {
     },
 
     subscriptions: {
-        setup({dispatch}) {
-        },
+       
     },
 
     effects: {
         * fetch({payload}, {call, put}) {  // eslint-disable-line
             const loginData = yield call(service.login,payload);
-            console.log(loginData);
             if (loginData.status === 'ok') {
               yield put(routerRedux.push('/'))
             }

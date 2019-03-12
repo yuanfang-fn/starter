@@ -1,6 +1,7 @@
+// eslint-disable-next-line no-unused-vars
 import React from 'react';
 import {
-  Router, Switch, ConnectedRouter
+  Router, Switch
 } from 'dva/router';
 import routeConfig from './routeConfig'
 import { renderRoutes } from 'react-router-config'

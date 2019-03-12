@@ -1,5 +1,4 @@
 import fetch from 'dva/fetch';
-import router from 'dva/router';
 import hash from 'hash.js';
 
 const codeMessage = {
@@ -26,6 +25,7 @@ const checkStatus = response => {
   }
   const errortext = codeMessage[response.status] || response.statusText;
  
+  // eslint-disable-next-line no-console
   console.log(`请求错误 ${response.status}: ${response.url}`);
   
   const error = new Error(errortext);

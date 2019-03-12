@@ -7,11 +7,10 @@ class Login extends React.Component {
         this.username=""
         this.password=""
      }
-     onLogin = ()=>{
+     onLogin = () => {
        if (this.props.loading) {
          return
        }
-       console.log('login');
       this.props.dispatch({
         type: 'global/fetch',
         payload: {username:this.username,password:this.password},
